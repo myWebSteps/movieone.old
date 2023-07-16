@@ -2,7 +2,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <strong>MovieOne &copy; 2022</strong>
+        <strong>MovieOne &copy; 2023</strong>
 
     </footer>
 
