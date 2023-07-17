@@ -2,18 +2,18 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12 col-lg-12">
-                <div class="cover-pic">
-                    <div class="position-absolute bg-white shadow-sm rounded text-center p-2 m-4 love-box">
-                        <h6 class="text-gray-900 mb-0 font-weight-bold"><i class="fas fa-heart text-danger"></i> 50%</h6>
-                        <small class="text-muted">8,784</small>
-                    </div>
-                    <!-- Постер Рекламы -->
+        <div class="row justify-content-center">
+<!--            <div class="col-xl-12 col-lg-12">-->
+<!--                <div class="cover-pic">-->
+<!--                    <div class="position-absolute bg-white shadow-sm rounded text-center p-2 m-4 love-box">-->
+<!--                        <h6 class="text-gray-900 mb-0 font-weight-bold"><i class="fas fa-heart text-danger"></i> 50%</h6>-->
+<!--                        <small class="text-muted">8,784</small>-->
+<!--                    </div>-->
+<!--                     Постер Рекламы -->
 <!--                    <img :src="movie.posterUrl" class="img-fluid" alt="...">-->
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3">
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-xl-3 col-lg-3 col-sm-8">
                 <div class="bg-white p-3 widget shadow rounded mb-4">
                     <img :src="movie.posterUrl" class="img-fluid rounded" alt="...">
                     <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Продолжительность:</h5>
