@@ -222,6 +222,42 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-white info-header shadow rounded mb-4">
+                <div class="row d-flex align-content-center-start justify-content-start p-3 border-bottom">
+                        <h6 class="text-gray-900 m-2 font-weight-bold">Похожие фильмы:</h6>
+
+
+                    <template v-if="relatedMovies != null">
+                    <div v-for="relatedMovie in relatedMovies" class="col-xl-3 col-md-4 mb-4">
+                        <div class="card e-card shadow border-0">
+                            <router-link :to="{name: 'film', params:{id: relatedMovie.id}}" class=""><div class="m-card-cover">
+                                <img :src="relatedMovie.posterUrl" class="card-img-top" alt="...">
+                            </div>
+                                <div class="card-body p-0">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-2 auto py-3 pl-3">
+                                            <div class="bg-white rounded text-center">
+                                                <h6 class="text-danger mb-0 font-weight-bold">{{relatedMovie.year}}</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-10 p-3">
+                                            <p class="card-text text-gray-900 mb-1">{{relatedMovie.nameRu}}</p>
+                                            <p class="card-text text-gray-900 mb-1">{{relatedMovie.nameOriginal}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </router-link>
+                        </div>
+                    </div>
+                    </template>
+
+
+
+
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -241,6 +277,7 @@
                 playlistRes: [],
                 newFilter: [],
                 currentPage: 1,
+                relatedMovies: null,
             }
         },
 
@@ -275,6 +312,7 @@
                         document.getElementById('document_description').innerText= this.movie.nameRu + ' : ' + this.movie.description
 
                         this.getReviews()
+                        this.getRelatedMovies(this.movie.subcategories[0].id, this.movie.id)
 
                         new Kinobox('.kinobox_player', {
                             'X-Settings': {
@@ -339,6 +377,14 @@
 
                 })
 
+            },
+
+            getRelatedMovies(subcatId, movieId){
+                axios.get(`/api/movie/get_related/${subcatId}/${movieId}`)
+                .then(response=>{
+                    this.relatedMovies = response.data.data
+
+                });
             },
 
             addToPlaylist(id){
@@ -413,7 +459,6 @@
                 .then(r=>{
                     this.reviews = r.data
                     this.currentPage = page
-                    console.log(this.reviews)
                 })
             },
 
