@@ -388,9 +388,62 @@
 
             testVideo(){
                 new Kinobox('.kinobox_player', {
-                    token: '099ff69cca3e4d669a111bc9e21d032a',
+                    'X-Settings': {
+                        "Alloha" : {
+                            "enable": true,
+                            "position": 1,
+                            "token": "",
+                        },
+                        "Ashdi": {
+                            "enable": true,
+                            "position": 2,
+                            "token": "",
+                        },
+                        "Bazon": {
+                            "enable": true,
+                            "position": 3,
+                            "token": "",
+                        },
+                        "Cdnmovies": {
+                            "enable": true,
+                            "position": 4,
+                            "token": "",
+                        },
+                        "Collaps":{
+                            "enable": true,
+                            "position": 5,
+                            "token": "",
+                        },
+                        "Hdvb":{
+                            "enable": true,
+                            "position": 6,
+                            "token": "",
+                        },
+                        "Iframe":{
+                            "enable": true,
+                            "position": 7,
+                            "token": "",
+                        },
+                        "Kodik":{
+                            "enable": true,
+                            "position": 8,
+                            "token": "",
+                        },
+                        "Videocdn": {
+                            "enable": true,
+                            "position": 9,
+                            "token": "",
+                        },
+                        "Voidboost": {
+                            "enable": true,
+                            "position": 10,
+                            "token": "",
+                        },
+
+                    },
                     search: {
                         kinopoisk: this.parseResult.kinopoiskId,
+                        title: this.parseResult.nameOriginal
                     }
                 }).init();
             },
@@ -400,7 +453,6 @@
                 const files = this.dropZone.getAcceptedFiles()
                 files.forEach(file => {
                     data.append('files[]', file);
-                    this.dropZone.removeFile(file)
                 })
 
                 data.append('kinopoisk_id', this.parseResult.kinopoiskId)
@@ -433,6 +485,11 @@
                         this.parseResult.description = null
                         this.inputArr.type = ''
                         this.resultSubcategories = null
+                        this.inputArr.countries = null
+
+                        files.forEach(file => {
+                            this.dropZone.removeFile(file)
+                        })
 
                     }).catch(e => {
                     // this.errors = e.response.data.errors
