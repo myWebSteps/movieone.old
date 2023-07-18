@@ -21,7 +21,7 @@ class ShowRelatedController extends Controller
 
         $data = SubCategory::where('id', $request->subcatId)->first();
 
-        $result = $data->movies->whereNotIn('id', $request->movieId)->take(4);
+        $result = $data->movies->whereNotIn('id', $request->movieId)->shuffle()->take(4);
 
 
         return ShowRelatedResource::collection($result);
