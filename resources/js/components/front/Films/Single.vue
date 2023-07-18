@@ -2,18 +2,18 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-12 col-lg-12">
-                <div class="cover-pic">
-                    <div class="position-absolute bg-white shadow-sm rounded text-center p-2 m-4 love-box">
-                        <h6 class="text-gray-900 mb-0 font-weight-bold"><i class="fas fa-heart text-danger"></i> 50%</h6>
-                        <small class="text-muted">8,784</small>
-                    </div>
-                    <!-- Постер Рекламы -->
+        <div class="row justify-content-center">
+<!--            <div class="col-xl-12 col-lg-12">-->
+<!--                <div class="cover-pic">-->
+<!--                    <div class="position-absolute bg-white shadow-sm rounded text-center p-2 m-4 love-box">-->
+<!--                        <h6 class="text-gray-900 mb-0 font-weight-bold"><i class="fas fa-heart text-danger"></i> 50%</h6>-->
+<!--                        <small class="text-muted">8,784</small>-->
+<!--                    </div>-->
+<!--                     Постер Рекламы -->
 <!--                    <img :src="movie.posterUrl" class="img-fluid" alt="...">-->
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-3">
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-xl-3 col-lg-3 col-sm-8">
                 <div class="bg-white p-3 widget shadow rounded mb-4">
                     <img :src="movie.posterUrl" class="img-fluid rounded" alt="...">
                     <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Продолжительность:</h5>
@@ -135,6 +135,19 @@
                         </div>
                         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="card-body p-0 reviews-card">
+
+                                <nav v-if="reviews.totalPages > 1" class="d-grid justify-content-md-center">
+                                    <ul class="pagination">
+
+                                        <li v-for="page in reviews.totalPages" class="page-item">
+                                            <a @click.prevent="getReviews(page)" :class="page == currentPage? 'active' : ''" class="page-link" href="#" :value="page">{{page}}</a>
+                                        </li>
+
+
+                                    </ul>
+                                </nav>
+
+
                                 <div v-for="review in reviews.items" class="media mb-4">
                                     <div class="media-body">
                                         <div class="mt-0 mb-2">
@@ -152,6 +165,17 @@
                                         <p>{{review.description}}</p>
                                     </div>
                                 </div>
+                                <nav v-if="reviews.totalPages > 1" class="d-grid justify-content-md-center">
+                                    <ul class="pagination">
+
+                                        <li v-for="page in reviews.totalPages" class="page-item">
+                                                <a @click.prevent="getReviews(page)" :class="page == currentPage? 'active' : ''" class="page-link" href="#" :value="page">{{page}}</a>
+                                        </li>
+
+
+                                    </ul>
+                                </nav>
+
                             </div>
                             <!--Comment Form-->
 <!--                            <div class="p-4 bg-light rounded mt-4">-->
@@ -198,6 +222,42 @@
                     </div>
                 </div>
             </div>
+
+            <div class="bg-white info-header shadow rounded mb-4">
+                <div class="row d-flex align-content-center-start justify-content-start p-3 border-bottom">
+                        <h6 class="text-gray-900 m-2 font-weight-bold">Похожие фильмы:</h6>
+
+
+                    <template v-if="relatedMovies != null">
+                    <div v-for="relatedMovie in relatedMovies" class="col-xl-3 col-md-4 mb-4">
+                        <div class="card e-card shadow border-0">
+                            <router-link :to="{name: 'film', params:{id: relatedMovie.id}}" class=""><div class="m-card-cover">
+                                <img :src="relatedMovie.posterUrl" class="card-img-top" alt="...">
+                            </div>
+                                <div class="card-body p-0">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-2 auto py-3 pl-3">
+                                            <div class="bg-white rounded text-center">
+                                                <h6 class="text-danger mb-0 font-weight-bold">{{relatedMovie.year}}</h6>
+                                            </div>
+                                        </div>
+                                        <div class="col-10 p-3">
+                                            <p class="card-text text-gray-900 mb-1">{{relatedMovie.nameRu}}</p>
+                                            <p class="card-text text-gray-900 mb-1">{{relatedMovie.nameOriginal}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </router-link>
+                        </div>
+                    </div>
+                    </template>
+
+
+
+
+                </div>
+            </div>
+
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -215,7 +275,9 @@
                 reviews: {},
                 playlist: [],
                 playlistRes: [],
-                newFilter: []
+                newFilter: [],
+                currentPage: 1,
+                relatedMovies: null,
             }
         },
 
@@ -250,17 +312,79 @@
                         document.getElementById('document_description').innerText= this.movie.nameRu + ' : ' + this.movie.description
 
                         this.getReviews()
+                        this.getRelatedMovies(this.movie.subcategories[0].id, this.movie.id)
 
                         new Kinobox('.kinobox_player', {
-                            token: '099ff69cca3e4d669a111bc9e21d032a',
+                            'X-Settings': {
+                                "Alloha" : {
+                                    "enable": true,
+                                    "position": 1,
+                                    "token": "",
+                                },
+                                "Ashdi": {
+                                    "enable": true,
+                                    "position": 2,
+                                    "token": "",
+                                },
+                                "Bazon": {
+                                    "enable": true,
+                                    "position": 3,
+                                    "token": "",
+                                },
+                                "Cdnmovies": {
+                                    "enable": true,
+                                    "position": 4,
+                                    "token": "",
+                                },
+                                "Collaps":{
+                                    "enable": true,
+                                    "position": 5,
+                                    "token": "",
+                                },
+                                "Hdvb":{
+                                    "enable": true,
+                                    "position": 6,
+                                    "token": "",
+                                },
+                                "Iframe":{
+                                    "enable": true,
+                                    "position": 7,
+                                    "token": "",
+                                },
+                                "Kodik":{
+                                    "enable": true,
+                                    "position": 8,
+                                    "token": "",
+                                },
+                                "Videocdn": {
+                                    "enable": true,
+                                    "position": 9,
+                                    "token": "",
+                                },
+                                "Voidboost": {
+                                    "enable": true,
+                                    "position": 10,
+                                    "token": "",
+                                },
+
+                            },
                             search: {
                                 kinopoisk: this.movie.kinopoisk_id,
+                                title: this.movie.nameOriginal
                             }
                         }).init();
                     }).catch(e=>{
 
                 })
 
+            },
+
+            getRelatedMovies(subcatId, movieId){
+                axios.get(`/api/movie/get_related/${subcatId}/${movieId}`)
+                .then(response=>{
+                    this.relatedMovies = response.data.data
+
+                });
             },
 
             addToPlaylist(id){
@@ -307,7 +431,6 @@
                     {headers: {
                             'X-API-KEY': 'e3409535-696e-40cb-8764-86dda0af9f48',
                             'Content-Type': 'application/json',
-                            WithCredentials: false,
                         }}
                 ).then(resp=>{
 
@@ -324,10 +447,9 @@
                 })
             },
 
-            getReviews(){
-                axios.get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${this.movie.kinopoisk_id}/reviews?page=1&order=DATE_DESC`,
+            getReviews(page = 1){
+                axios.get(`https://kinopoiskapiunofficial.tech/api/v2.2/films/${this.movie.kinopoisk_id}/reviews?page=${page}&order=DATE_DESC`,
                     {
-
                         headers: {
                             'X-API-KEY': 'e3409535-696e-40cb-8764-86dda0af9f48',
                             'Content-Type': 'application/json',
@@ -336,6 +458,7 @@
                     })
                 .then(r=>{
                     this.reviews = r.data
+                    this.currentPage = page
                 })
             },
 

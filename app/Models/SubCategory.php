@@ -12,4 +12,9 @@ class SubCategory extends Model
     protected $guarded = false;
 
     public $timestamps = false;
+
+    public function movies()
+    {
+        return $this->belongsToMany(Movie::class, 'movie_subcategories', 'subcategory_id', 'movie_id');
+    }
 }

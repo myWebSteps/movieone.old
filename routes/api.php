@@ -52,6 +52,7 @@ Route::get('/countries', \App\Http\Controllers\API\Countries\IndexController::cl
 Route::get('/movies', \App\Http\Controllers\API\Movies\IndexController::class);
 Route::get('/subcategories', \App\Http\Controllers\API\Subcategories\IndexController::class);
 Route::get('/movie/{id}', \App\Http\Controllers\API\Movies\ShowController::class);
+Route::get('/movie/get_related/{subcatId}/{movieId}', \App\Http\Controllers\API\Movies\ShowRelatedController::class);
 Route::post('/playlist', \App\Http\Controllers\API\Movies\PlaylistController::class);
 
 
