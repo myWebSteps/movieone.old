@@ -11,22 +11,22 @@
                         <div class="carousel-item active">
                             <img src="../../../assets/img/slider1.jpg" class="d-block w-100 rounded-3" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>First slide label</h5>
-                                <p>Some representative placeholder content for the first slide.</p>
+                                <h5>MovieOne.ru</h5>
+                                <p>Актуальные коллекции фильмов</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="../../../assets/img/slider2.jpg" class="d-block w-100 rounded-3" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Some representative placeholder content for the second slide.</p>
+                                <h5>MovieOne.ru</h5>
+                                <p>Мультфильмы на любой вкус</p>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <img src="../../../assets/img/slider3.jpg" class="d-block w-100 rounded-3" alt="...">
                             <div class="carousel-caption d-none d-md-block">
-                                <h5>Third slide label</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
+                                <h5>MovieOne.ru</h5>
+                                <p>Подборки фильмов по тематикам</p>
                             </div>
                         </div>
                     </div>

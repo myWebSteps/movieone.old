@@ -19,7 +19,7 @@ class Movie extends Model
 
     public function subcategories()
     {
-        return $this->hasMany(movieSubcategory::class);
+        return $this->hasMany(MovieSubcategory::class);
     }
 
     public function countries()
@@ -30,7 +30,7 @@ class Movie extends Model
 
     public function createSubcategories()
     {
-        return $this->belongsToMany( SubCategory::class, movieSubcategory::class, 'movie_id', 'subcategory_id');
+        return $this->belongsToMany( SubCategory::class, MovieSubcategory::class, 'movie_id', 'subcategory_id');
     }
 
     public function createCountries()
