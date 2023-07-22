@@ -4,7 +4,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <router-link :to="{name: 'home'}" class="brand-link">
-            <img src="../../../assets/img/logo-icon.png" alt="AdminLTE Logo" class="brand-image pt-2" style="opacity: .8">
+            <img src="logo-icon.png" alt="AdminLTE Logo" class="brand-image pt-2" style="opacity: .8">
             <span class="brand-text font-weight-light">MovieOne</span>
 
 
