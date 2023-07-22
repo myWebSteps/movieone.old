@@ -51,6 +51,26 @@
                                 </div>
                             </div>
 
+                            <!-- Year -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Год:</label>
+                                    <input v-model="parseResult.year" type="text" placeholder="Выберите год" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                </div>
+                            </div>
+
+                            <!-- Year Parse -->
+                            <div class="col-sm-6">
+                                <div class="form-group" v-if="parseResult.year != null">
+                                    <div class="alert alert-info" >
+                                        <label>Год по версии Кинопоиска:</label>
+                                        <p>
+                                            {{parseResult.year}}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Video Test -->
                             <div class="col-sm-6">
                                 <div class="form-group mt-3" v-if="parseResult.kinopoiskId != null">
@@ -214,26 +234,6 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- Year -->
-                            <div class="col-sm-6">
-                            <div class="form-group">
-                                <label>Год:</label>
-                                <input v-model="parseResult.year" type="text" placeholder="Выберите год" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            </div>
-                            </div>
-
-                            <!-- Year Parse -->
-                            <div class="col-sm-6">
-                            <div class="form-group" v-if="parseResult.year != null">
-                                <div class="alert alert-info" >
-                                    <label>Год по версии Кинопоиска:</label>
-                                    <p>
-                                        {{parseResult.year}}
-                                    </p>
-                                </div>
-                            </div>
                             </div>
 
                             <!-- Duration Parse -->
