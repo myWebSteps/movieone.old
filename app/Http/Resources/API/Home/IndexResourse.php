@@ -16,19 +16,13 @@ class IndexResourse extends JsonResource
     public function toArray(Request $request): array
     {
         foreach ($this['movies'] as $movie) {
-            $subcategories = [];
-            foreach ($movie->subcategories as $subcategory) {
-                $subcategories[] = SubCategory::where('id', $subcategory->subcategory_id)->first('title');
-            }
-            $movie['subcategories'] = $subcategories;
+            $movie['subcategories'] = $movie->createSubcategories;
             $movie['poster_path'] = url('/storage'.$movie['poster_path']);
-
         }
 
         return [
             'category' => $this['category'],
             'movies' => $this['movies'],
-
         ];
     }
 }
