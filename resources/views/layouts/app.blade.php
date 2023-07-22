@@ -15,7 +15,7 @@
     <!-- Theme -->
     <meta name="description" id="document_description" content="">
 
-    <link rel="icon" type="image/png" href="assets/img/logo-icon.png">
+    <link rel="icon" type="image/png" href="{{asset('assets/img/logo-icon.png')}}">
 
 
 </head>
