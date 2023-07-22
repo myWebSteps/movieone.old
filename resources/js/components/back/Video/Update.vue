@@ -163,6 +163,12 @@
                 <!-- /.card-body -->
             </div>
 
+            <template v-if="errors !== null">
+                <div class="form-group" v-for="error in errors">
+                    <div class="alert alert-danger" v-for="item in error">{{item}}</div>
+                </div>
+            </template>
+
         </div>
 
 </template>
@@ -185,6 +191,8 @@
                 resultCountries: null,
 
                 dropZone: null,
+
+                errors: null,
             }
         },
 
@@ -281,38 +289,15 @@
                             this.$router.push({name: 'videos'})
 
                         }).catch(e => {
-                        // this.errors = e.response.data.errors
-                        // setTimeout(this.errorsDismiss, 4000)
+                        this.errors = e.response.data.errors
+                        console.log(this.errors)
+                        setTimeout(this.errorsDismiss, 4000)
                     })
 
             },
-
-            // store() {
-            //     const data = new FormData()
-            //     const files = this.dropZone.getAcceptedFiles()
-            //     files.forEach(file => {
-            //         data.append('files[]', file);
-            //         this.dropZone.removeFile(file)
-            //     })
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-            //
-
-            // },
-
-
-
+            errorsDismiss(){
+                this.errors = {}
+            },
 
         },
     }

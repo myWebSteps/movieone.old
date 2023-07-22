@@ -276,6 +276,11 @@
 
                 <!-- /.card-body -->
             </div>
+            <template v-if="errors !== null">
+                <div class="form-group" v-for="error in errors">
+                    <div class="alert alert-danger" v-for="item in error">{{item}}</div>
+                </div>
+            </template>
 
         </div>
 
@@ -302,6 +307,8 @@
                 dropZone: null,
 
                 testId: null,
+
+                errors: null,
             }
         },
 
@@ -492,10 +499,15 @@
                         })
 
                     }).catch(e => {
-                    // this.errors = e.response.data.errors
-                    // setTimeout(this.errorsDismiss, 4000)
+                    this.errors = e.response.data.errors;
+                    setTimeout(this.errorsDismiss, 4000)
                 })
             },
+
+            errorsDismiss(){
+                this.errors = {}
+            },
+
 
 
 
