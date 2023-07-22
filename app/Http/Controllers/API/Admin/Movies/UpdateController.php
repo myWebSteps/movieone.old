@@ -19,6 +19,7 @@ class UpdateController extends Controller
     {
         $data = $request->validated();
 
+
         if(isset($data['files'])){
             $files = $data['files'];
             unset($data['files']);
