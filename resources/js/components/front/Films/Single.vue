@@ -50,11 +50,11 @@
                         </div>
                         <div class="col-lg-5 text-right">
                             <a @click.prevent="copyUrl()" href="#" class="d-sm-inline-block btn btn-primary shadow-sm"><i class="fas fa-share-alt"></i></a>
-                            <template v-if="!playlistIncludes(movie.id)">
-                                <a @click.prevent="addToPlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> В избранное <i class="fas fa-plus fa-sm  ml-1"></i></a>
-                            </template>
-                            <template v-if="playlistIncludes(movie.id)">
-                            <a @click.prevent="addToPlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> Убрать <i class="fas fa-minus fa-sm  ml-1"></i></a>
+                                <template v-if="!playlistItems">
+                                    <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> В избранное <i class="fas fa-plus fa-sm  ml-1"></i></a>
+                                </template>
+                            <template v-if="playlistItems">
+                            <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> Убрать <i class="fas fa-minus fa-sm  ml-1"></i></a>
                             </template>
                         </div>
                     </div>
@@ -278,6 +278,7 @@
                 newFilter: [],
                 currentPage: 1,
                 relatedMovies: null,
+                playlistItems: null,
             }
         },
 
@@ -295,6 +296,8 @@
             this.staff.directors = {}
             this.staff.actors = {}
             this.staff.support = {}
+
+
 
         },
 
@@ -373,6 +376,16 @@
                                 title: this.movie.nameOriginal
                             }
                         }).init();
+
+
+                        this.playlistRes = localStorage.getItem('playlist').split(',')
+                        if(this.playlistRes.includes(String(this.movie.id))){
+                            this.playlistItems = true;
+                            console.log(this.playlistItems);
+                        }else{
+                            this.playlistItems = false;
+                        }
+
                     }).catch(e=>{
 
                 })
@@ -387,13 +400,14 @@
                 });
             },
 
-            addToPlaylist(id){
+            togglePlaylist(id){
                 if(!localStorage.getItem('playlist')){
                     this.playlistRes.push(id)
                     localStorage.setItem('playlist', this.playlistRes)
 
                     this.$parent.$parent.$refs.header.PlayListCount()
                     this.$parent.$parent.$refs.header.makePlaylist()
+                    this.playlistItems = true;
                 }else{
                     this.playlistRes = localStorage.getItem('playlist').split(',')
                     if(this.playlistRes.includes(String(id))){
@@ -406,23 +420,14 @@
                         localStorage.setItem('playlist', this.playlistRes)
                         this.$parent.$parent.$refs.header.PlayListCount()
                         this.$parent.$parent.$refs.header.makePlaylist()
+                        this.playlistItems = false;
                     }else{
                         this.playlistRes.push(id)
                         localStorage.setItem('playlist', this.playlistRes)
                         this.$parent.$parent.$refs.header.PlayListCount()
                         this.$parent.$parent.$refs.header.makePlaylist()
+                        this.playlistItems = true;
                     }
-                }
-            },
-
-            playlistIncludes(id){
-                if(localStorage.getItem('playlist')) {
-                    this.playlistRes = localStorage.getItem('playlist').split(',')
-                    if (this.playlistRes.includes(String(id))) {
-                        return true
-                    }
-                }else{
-                    return false
                 }
             },
 
