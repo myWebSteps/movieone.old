@@ -21,7 +21,7 @@ const router = createRouter({
                     meta: {
                         title: 'MovieOne.ru Онлайн кинотеатр',
                         filter: false,
-                        pageTitle: false
+                        pageTitle: false,
                     }
                 },
                 {

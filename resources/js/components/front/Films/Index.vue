@@ -7,7 +7,7 @@
 
                     <div class="col-xl-12 col-lg-8">
                         <div class="row">
-                            <div v-for="movie in movies" class="col-xl-3 col-md-6 mb-4">
+                            <div v-for="movie in movies" class="col-xl-3 col-md-6 mb-4 col-sm-6">
                                 <div  class="card e-card shadow border-0">
                                     <router-link :to="{path: `films/${movie.id}`}">
                                         <div class="m-card-cover">
