@@ -38,32 +38,35 @@
                 </div>
             </li>
 
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
+            <!-- Playlist Dropdown Menu -->
+            <li v-if="playlist" class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="fa-solid fa-tags"></i>
                     <span class="badge badge-danger navbar-badge">{{playCount}}</span>
 
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <router-link v-for="item in playlist" :to="{name: 'film', params: {id: item.id}}" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                                 <img :src="item.posterUrl" :alt="item.nameRu" class="img-size-50 mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    {{item.nameRu}}
-                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">{{item.nameOriginal}}</p>
-                                <p class="text-sm text-muted">{{item.year}}</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </router-link>
-                    <div class="dropdown-divider"></div>
 
-                </div>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <router-link v-for="item in playlist" :to="{name: 'film', params: {id: item.id}}" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <img :src="item.posterUrl" :alt="item.nameRu" class="img-size-50 mr-3">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        {{item.nameRu}}
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">{{item.nameOriginal}}</p>
+                                    <p class="text-sm text-muted">{{item.year}}</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </router-link>
+                        <div class="dropdown-divider"></div>
+
+                    </div>
+
+
             </li>
 
             <li class="nav-item">
@@ -271,7 +274,13 @@
             PlayListCount(){
                 if(localStorage.getItem('playlist'))
                 {
-                    this.playCount = localStorage.getItem('playlist').split(',').length
+                    this.playCount = localStorage.getItem('playlist').split(',')
+
+                    this.playCount = this.playCount.filter(function (el) {
+                        return el != '';
+                    });
+
+                    this.playCount = this.playCount.length
 
                 }else{
                     this.playCount = null
@@ -279,12 +288,15 @@
             },
 
             makePlaylist(){
-                if(localStorage.getItem('playlist')){
+                if(localStorage.getItem('playlist') != ''){
                     axios.post('/api/playlist', {id: localStorage.getItem('playlist')})
                     .then(response=>{
+                        console.log(response.data.data)
                         this.playlist = response.data.data
                     })
 
+                }else{
+                    this.playlist = null
                 }
             },
 
