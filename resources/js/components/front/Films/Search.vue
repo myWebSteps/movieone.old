@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mt-4 mb-4">
+        <div class="d-sm-flex align-items-center justify-content-between p-4 mb-4">
             <h1 class="h5 mb-0 text-gray-900">Результаты поиска:"{{this.$route.query.key}}"</h1>
         </div>
         <!-- Content Row -->
