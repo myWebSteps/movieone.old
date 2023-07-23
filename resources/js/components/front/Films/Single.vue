@@ -426,6 +426,11 @@
                                 return elem
                             }
                         })
+                        if(this.playlistRes == ''){
+                            localStorage.setItem('playlist', '')
+                            this.$parent.$parent.$refs.header.PlayListCount()
+                            this.$parent.$parent.$refs.header.makePlaylist()
+                        }
 
                         localStorage.setItem('playlist', this.playlistRes)
                         this.$parent.$parent.$refs.header.PlayListCount()
