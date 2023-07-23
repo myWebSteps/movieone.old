@@ -4,7 +4,7 @@
     <div>
         <!-- Content Header (Page header) -->
         <div class="content-header">
-            <div class="container-fluid">
+            <div class="container-fluid p-0 m-0">
 
                 <div id="carouselExampleFade" class="carousel slide carousel-fade " data-bs-ride="carousel">
                     <div class="carousel-inner">

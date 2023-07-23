@@ -54,7 +54,8 @@ Route::get('/subcategories', \App\Http\Controllers\API\Subcategories\IndexContro
 Route::get('/movie/{id}', \App\Http\Controllers\API\Movies\ShowController::class);
 Route::get('/movie/get_related/{subcatId}/{movieId}', \App\Http\Controllers\API\Movies\ShowRelatedController::class);
 Route::post('/playlist', \App\Http\Controllers\API\Movies\PlaylistController::class);
+Route::get('/page_title/{category}', \App\Http\Controllers\API\PageTitle\PageTitleController::class);
 
 
-// Admin Routes
+
 
