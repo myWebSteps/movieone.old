@@ -51,7 +51,7 @@
                             <h5 class="mt-0 mb-3 mt-2">{{movie.slogan}}</h5>
 
                             <p class="mb-0 text-gray-800">
-                                <small class="text-muted"><i class="fas fa-film fa-fw fa-sm mr-1"></i>
+                                <small class="text-muted"><i class="fa-solid fa-tape mr-2"></i>
                                     <span v-for="subcategory in movie.subcategories">
                                         {{subcategory.title}}&nbsp
                                     </span>
@@ -232,13 +232,14 @@
                 </div>
             </div>
 
+
+            <template v-if="relatedMovies.length > 0">
             <div class="bg-white info-header shadow rounded mb-4">
                 <div class="row d-flex align-content-center-start justify-content-start p-3 border-bottom">
                         <h6 class="text-gray-900 m-2 font-weight-bold">Похожие фильмы:</h6>
+                </div>
 
-
-                    <template v-if="relatedMovies != null">
-                    <div v-for="relatedMovie in relatedMovies" class="col-xl-3 col-md-4 mb-4">
+                    <div v-for="relatedMovie in relatedMovies" class="col-xl-2 col-md-3 col-sm-4 m-4 col-6">
                         <div class="card e-card shadow border-0">
                             <router-link :to="{name: 'film', params:{id: relatedMovie.id}}" class=""><div class="m-card-cover">
                                 <img :src="relatedMovie.posterUrl" class="card-img-top" alt="...">
@@ -259,6 +260,7 @@
                             </router-link>
                         </div>
                     </div>
+            </div>
                     </template>
 
 
@@ -267,8 +269,8 @@
                 </div>
             </div>
 
-        </div>
-    </div>
+
+
     <!-- /.container-fluid -->
 
 </template>
@@ -286,7 +288,7 @@
                 playlistRes: [],
                 newFilter: [],
                 currentPage: 1,
-                relatedMovies: null,
+                relatedMovies: [],
                 playlistItems: null,
             }
         },
@@ -390,7 +392,6 @@
                         this.playlistRes = localStorage.getItem('playlist').split(',')
                         if(this.playlistRes.includes(String(this.movie.id))){
                             this.playlistItems = true;
-                            console.log(this.playlistItems);
                         }else{
                             this.playlistItems = false;
                         }
@@ -405,7 +406,7 @@
                 axios.get(`/api/movie/get_related/${subcatId}/${movieId}`)
                 .then(response=>{
                     this.relatedMovies = response.data.data
-
+                    console.log(this.relatedMovies)
                 });
             },
 
