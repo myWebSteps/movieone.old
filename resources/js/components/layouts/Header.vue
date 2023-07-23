@@ -9,7 +9,7 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <router-link :to="{name: 'home'}" class="nav-link">Домой</router-link>
+                <router-link :to="{name: 'home'}" class="nav-link">ГЛАВНАЯ</router-link>
             </li>
 
         </ul>
@@ -41,7 +41,7 @@
             <!-- Messages Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-comments"></i>
+                    <i class="fa-solid fa-tags"></i>
                     <span class="badge badge-danger navbar-badge">{{playCount}}</span>
 
                 </a>

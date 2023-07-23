@@ -13,23 +13,32 @@
 <!--                    <img :src="movie.posterUrl" class="img-fluid" alt="...">-->
 <!--                </div>-->
 <!--            </div>-->
-            <div class="col-xl-3 col-lg-3 col-sm-8">
+            <div class="col-xl-3 col-lg-3 col-sm-12">
                 <div class="bg-white p-3 widget shadow rounded mb-4">
-                    <img :src="movie.posterUrl" class="img-fluid rounded" alt="...">
-                    <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Продолжительность:</h5>
-                    <p>{{movie.filmLength}} мин</p>
-<!--                    <h1 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Год выпуска:</h1>-->
-<!--                    <p>{{movie.year}}</p>-->
-                    <h5 v-if="movie.endYear != null" class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Год окончания:</h5>
-                    <p>{{movie.endYear}}</p>
-                    <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Рейтинг:</h5>
-                    <p>{{movie.rate}}</p>
-                    <h5 v-if="movie.endYear != null" class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Страны:</h5>
-                    <p>
+                    <div class="row">
+
+                    <div class="col-sm-6 col-xl-12 col-lg-12">
+                        <img :src="movie.posterUrl" class="img-fluid rounded" :alt="movie.nameOriginal">
+                    </div>
+                    <div class="col-sm-6 col-xl-12 col-lg-12">
+                        <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Продолжительность:</h5>
+                        <p>{{movie.filmLength}} мин</p>
+                        <!--                    <h1 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Год выпуска:</h1>-->
+                        <!--                    <p>{{movie.year}}</p>-->
+                        <h5 v-if="movie.endYear != null" class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Год окончания:</h5>
+                        <p>{{movie.endYear}}</p>
+                        <h5 class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Рейтинг:</h5>
+                        <p>{{movie.rate}}</p>
+                        <h5 v-if="movie.endYear != null" class="h6 mb-0 mt-3 font-weight-bold text-gray-900">Страны:</h5>
+                        <p>
                         <span v-for="country in movie.countries">
                         {{country.title}}&nbsp
                         </span>
-                    </p>
+                        </p>
+                    </div>
+
+                    </div>
+
 
                 </div>
             </div>
@@ -49,12 +58,12 @@
                                 </small></p>
                         </div>
                         <div class="col-lg-5 text-right">
-                            <a @click.prevent="copyUrl()" href="#" class="d-sm-inline-block btn btn-primary shadow-sm"><i class="fas fa-share-alt"></i></a>
+                            <a @click.prevent="copyUrl()" href="#" class="d-sm-inline-block btn btn-primary shadow-sm mr-2"><i class="fa-regular fa-copy"></i></a>
                                 <template v-if="!playlistItems">
-                                    <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> В избранное <i class="fas fa-plus fa-sm  ml-1"></i></a>
+                                    <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> В избранное <i class="fa-solid fa-square-plus"></i></a>
                                 </template>
                             <template v-if="playlistItems">
-                            <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> Убрать <i class="fas fa-minus fa-sm  ml-1"></i></a>
+                            <a @click.prevent="togglePlaylist(movie.id)" href="#" class="d-sm-inline-block btn btn-danger shadow-sm"> Убрать <i class="fa-solid fa-square-minus"></i></a>
                             </template>
                         </div>
                     </div>
@@ -469,6 +478,14 @@
 
             copyUrl(){
                 navigator.clipboard.writeText(window.location.href)
+
+                $(document).Toasts('create', {
+                    class: 'bg-info',
+                    title: 'MovieOne.ru',
+                    subtitle: 'Закрыть',
+                    body: 'Ссылка успешно скопирована'
+                })
+
             }
 
         },
