@@ -24,6 +24,7 @@
                                                     <p v-if="movie.nameRu != null" class="card-text text-gray-900 mb-1">{{movie.nameRu}}</p>
                                                     <p v-if="movie.nameOriginal != null" class="card-text text-gray-900 mb-1">{{movie.nameOriginal}}</p>
                                                     <p class="card-text">
+                                                        <small class="text-muted"><i class="fa-solid fa-tape mr-2"></i></small>
                                                         <small v-for="subcategory in movie.subcategory_title" class="text-muted">
                                                             {{subcategory.title}} &nbsp
                                                         </small></p>
