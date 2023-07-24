@@ -2,7 +2,7 @@
 
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark">
+    <nav class="main-header navbar navbar-expand navbar-dark p-0 m-0">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
