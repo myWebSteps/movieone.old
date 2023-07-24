@@ -10,10 +10,11 @@
         :slide-ratio="1 / 4"
         :arrows-outside="false">
         <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+
     </vueper-slides>
 
         <!-- Content Header (Page header) -->
-        <div class="content-header">
+        <div class="content-header p-0 m-0">
             <div class="container-fluid p-0 m-0">
 
 
