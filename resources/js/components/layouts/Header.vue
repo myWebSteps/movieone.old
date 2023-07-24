@@ -69,16 +69,16 @@
 
             </li>
 
-<!--            <li class="nav-item ml-4">-->
-<!--                    <a  href="https://instagram.com/roman_makukha_89?igshid=OGQ5ZDc2ODk2ZA==" class="nav-link" target="_blank">-->
-<!--                        <i class="fa-brands fa-instagram"></i>-->
-<!--                    </a>-->
-<!--            </li>-->
-<!--        <li class="nav-item">-->
-<!--                    <a href="https://t.me/kino_movieone" class="nav-link" target="_blank">-->
-<!--                        <i class="fa-brands fa-telegram"></i>-->
-<!--                    </a>-->
-<!--        </li>-->
+            <li class="nav-item ml-4">
+                    <a  href="https://instagram.com/roman_makukha_89?igshid=OGQ5ZDc2ODk2ZA==" class="nav-link" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+            </li>
+        <li class="nav-item">
+                    <a href="https://t.me/kino_movieone" class="nav-link" target="_blank">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+        </li>
 
 
 
