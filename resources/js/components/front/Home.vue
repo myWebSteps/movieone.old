@@ -2,19 +2,21 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div>
+        <vueper-slides
+        fade
+        :autoplay="true"
+        :visible-slides="3"
+        slide-multiple
+        :slide-ratio="1 / 4"
+        :arrows-outside="false">
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+    </vueper-slides>
+
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid p-0 m-0">
 
-                <vueper-slides
-                    fade
-                    :autoplay="true"
-                    :visible-slides="3"
-                    slide-multiple
-                    :slide-ratio="1 / 4"
-                    :arrows-outside="false">
-                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-                </vueper-slides>
+
 
 <!--                <vueper-slides autoplay>-->
 <!--                    <vueper-slide v-for="(slide, i) in slides"-->
