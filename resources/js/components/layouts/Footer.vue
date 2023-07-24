@@ -7,16 +7,16 @@
         </div>
       <div class="d-flex justify-content-end col-6">
 
-              <span class="nav-item">
-                  <a  href="https://instagram.com/roman_makukha_89?igshid=OGQ5ZDc2ODk2ZA==" class="nav-link">
-                      <i class="fa-brands fa-instagram"></i>
-                  </a>
-              </span>
-              <span class="nav-item">
-                  <a href="https://t.me/kino_movieone" class="nav-link">
-                      <i class="fa-brands fa-telegram"></i>
-                  </a>
-              </span>
+<!--              <span class="nav-item">-->
+<!--                  <a  href="https://instagram.com/roman_makukha_89?igshid=OGQ5ZDc2ODk2ZA==" class="nav-link">-->
+<!--                      <i class="fa-brands fa-instagram"></i>-->
+<!--                  </a>-->
+<!--              </span>-->
+<!--              <span class="nav-item">-->
+<!--                  <a href="https://t.me/kino_movieone" class="nav-link">-->
+<!--                      <i class="fa-brands fa-telegram"></i>-->
+<!--                  </a>-->
+<!--              </span>-->
       </div>
 
 
