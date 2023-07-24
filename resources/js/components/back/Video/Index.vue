@@ -19,6 +19,7 @@
                     <th>NameRu</th>
                     <th>NameOriginal</th>
                     <th>Action</th>
+                    <th></th>
 
                 </tr>
                 </thead>
@@ -31,8 +32,10 @@
                         <td>{{movie.nameRu}}</td>
                         <td>{{movie.nameOriginal}}</td>
                         <td>
-                            <Router-link :to="{name: 'redact_video', params: {id: movie.id}}" type="button" class="btn btn-block btn-warning btn-sm w-50">Redact</Router-link>
-                            <button @click="deleteMovie(movie.id)" type="button" class="btn btn-block btn-danger btn-sm w-50">Delete</button>
+                            <Router-link :to="{name: 'redact_video', params: {id: movie.id}}" type="button" class="btn btn-block btn-warning btn-sm w-50"><i class="fa-solid fa-pen-to-square"></i></Router-link>
+                        </td>
+                        <td>
+                            <button @click="deleteMovie(movie.id)" type="button" class="btn btn-block btn-danger btn-sm w-50"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
 

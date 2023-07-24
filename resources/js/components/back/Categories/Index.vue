@@ -47,6 +47,7 @@
                     <th>Title</th>
                     <th>Category logo</th>
                     <th>Action</th>
+                    <th></th>
 
                 </tr>
                 </thead>
@@ -57,9 +58,10 @@
                         <td>{{category.title}}</td>
                         <td> <i :class="category.category_logo"></i></td>
                         <td>
-                            <button @click="getChangeInfo(category.id, category.title, category.category_logo)" type="button" class="btn btn-block btn-warning btn-sm w-50">Redact</button>
-                            <button @click="deleteCategory(category.id)" type="button" class="btn btn-block btn-danger btn-sm w-50">Delete</button>
-
+                            <button @click="getChangeInfo(category.id, category.title, category.category_logo)" type="button" class="btn btn-block btn-warning btn-sm w-50"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </td>
+                        <td>
+                            <button @click="deleteCategory(category.id)" type="button" class="btn btn-block btn-danger btn-sm w-50"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
 
@@ -68,7 +70,7 @@
                         <td><input type="text" v-model="categoryTitle"></td>
                         <td><input type="text" v-model="logo"></td>
                         <td>
-                            <button @click="send(category.id, categoryTitle, logo)" type="button" class="btn btn-block btn-warning btn-sm w-50">Submit</button>
+                            <button @click="send(category.id, categoryTitle, logo)" type="button" class="btn btn-block btn-success btn-sm w-50"><i class="fa-solid fa-check"></i></button>
                         </td>
                     </tr>
 

@@ -42,6 +42,7 @@
                     <th style="width: 10px">#</th>
                     <th>Title</th>
                     <th>Action</th>
+                    <th></th>
 
                 </tr>
                 </thead>
@@ -51,9 +52,10 @@
                         <td>{{country.id}}</td>
                         <td>{{country.title}}</td>
                         <td>
-                            <button @click="getChangeInfo(country.id, country.title)" type="button" class="btn btn-block btn-warning btn-sm w-50">Redact</button>
-                            <button @click="deleteCountry(country.id)" type="button" class="btn btn-block btn-danger btn-sm w-50">Delete</button>
-
+                            <button @click="getChangeInfo(country.id, country.title)" type="button" class="btn btn-block btn-warning btn-sm w-50"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </td>
+                        <td>
+                            <button @click="deleteCountry(country.id)" type="button" class="btn btn-block btn-danger btn-sm w-50"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
 
@@ -61,7 +63,7 @@
                         <td>{{country.id}}</td>
                         <td><input type="text" v-model="countryTitle"></td>
                         <td>
-                            <button @click="send(country.id, countryTitle)" type="button" class="btn btn-block btn-warning btn-sm w-50">Submit</button>
+                            <button @click="send(country.id, countryTitle)" type="button" class="btn btn-block btn-success btn-sm w-50"><i class="fa-solid fa-check"></i></button>
                         </td>
                     </tr>
 
