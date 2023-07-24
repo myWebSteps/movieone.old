@@ -6,39 +6,25 @@
         <div class="content-header">
             <div class="container-fluid p-0 m-0">
 
-                <div id="carouselExampleFade" class="carousel slide carousel-fade " data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../../../assets/img/slider1.jpg" class="d-block w-100 rounded-3" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>MovieOne.ru</h5>
-                                <p>Актуальные коллекции фильмов</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../../../assets/img/slider2.jpg" class="d-block w-100 rounded-3" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>MovieOne.ru</h5>
-                                <p>Мультфильмы на любой вкус</p>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../../../assets/img/slider3.jpg" class="d-block w-100 rounded-3" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>MovieOne.ru</h5>
-                                <p>Подборки фильмов по тематикам</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <vueper-slides
+                    fade
+                    :autoplay="true"
+                    :visible-slides="3"
+                    slide-multiple
+                    :slide-ratio="1 / 4"
+                    :arrows-outside="false">
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+                </vueper-slides>
+
+<!--                <vueper-slides autoplay>-->
+<!--                    <vueper-slide v-for="(slide, i) in slides"-->
+<!--                                  :image="slide.image"-->
+<!--                                  />-->
+<!--                    <template #pause>-->
+<!--                        <i class="icon pause_circle_outline"></i>-->
+<!--                    </template>-->
+<!--                </vueper-slides>-->
+
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -127,17 +113,57 @@
 </template>
 
 <script>
+    import { VueperSlides, VueperSlide } from 'vueperslides'
+    import 'vueperslides/dist/vueperslides.css'
+
     export default {
         name: "Home",
+
+        components: { VueperSlides, VueperSlide },
 
         data(){
             return{
                 results: null,
+                slides : [
+                    {
+                        image: '/img/slider1.jpg'
+
+            },
+                    {
+                        image: '/img/slider2.jpg'
+                    },
+                    {
+                        image: '/img/slider3.jpg'
+                    },
+                    {
+                        image: '/img/slider4.jpg'
+                    },
+                    {
+                        image: '/img/slider5.jpg'
+                    },
+                    {
+                        image: '/img/slider6.jpg'
+                    },
+                    {
+                        image: '/img/slider7.jpg'
+                    },
+                    {
+                        image: '/img/slider8.jpg'
+                    },
+                    {
+                        image: '/img/slider9.jpg'
+                    },
+
+                ]
             }
         },
 
     mounted() {
     this.send()
+
+
+
+
 
     document.getElementById('document_description').innerText= "MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
 

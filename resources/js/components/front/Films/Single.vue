@@ -3,16 +3,18 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="row justify-content-center">
-<!--            <div class="col-xl-12 col-lg-12">-->
-<!--                <div class="cover-pic">-->
+            <div class="col-xl-12 col-lg-12">
+                <div class="cover-pic">
 <!--                    <div class="position-absolute bg-white shadow-sm rounded text-center p-2 m-4 love-box">-->
 <!--                        <h6 class="text-gray-900 mb-0 font-weight-bold"><i class="fas fa-heart text-danger"></i> 50%</h6>-->
 <!--                        <small class="text-muted">8,784</small>-->
 <!--                    </div>-->
-<!--                     Постер Рекламы -->
-<!--                    <img :src="movie.posterUrl" class="img-fluid" alt="...">-->
-<!--                </div>-->
-<!--            </div>-->
+<!--                     Постер Рекламы-->
+                    <a href="https://t.me/kino_movieone" target="_blank">
+                    <img src="/img/poster.jpg" class="img-fluid" alt="promo poster">
+                    </a>
+                </div>
+            </div>
             <div class="col-xl-3 col-lg-3 col-sm-12">
                 <div class="bg-white p-3 widget shadow rounded mb-4">
                     <div class="row">
