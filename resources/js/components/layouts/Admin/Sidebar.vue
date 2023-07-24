@@ -15,7 +15,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item">
                         <router-link :to="{name: 'admin'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Главная
                             </p>
@@ -24,7 +24,7 @@
                     <li class="nav-header">КАТЕГОРИИ</li>
                     <li class="nav-item">
                         <router-link :to="{name: 'admin.categories'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Категории
                             </p>
@@ -32,7 +32,7 @@
                     </li>
                     <li class="nav-item">
                         <router-link :to="{name: 'admin.subcategories'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Субкатегории
                             </p>
@@ -41,7 +41,7 @@
                     <li class="nav-header">СТРАНЫ</li>
                     <li class="nav-item">
                         <router-link :to="{name: 'countries'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Список стран
                             </p>
@@ -50,7 +50,7 @@
                     <li class="nav-header">ВИДЕО</li>
                     <li class="nav-item">
                         <router-link :to="{name: 'add_video'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Добавить видео
                             </p>
@@ -59,7 +59,7 @@
 
                     <li class="nav-item">
                         <router-link :to="{name: 'videos'}" class="nav-link">
-                            <i class="far fa-circle"></i>
+                            <i class="far fa-circle"></i> &nbsp
                             <p>
                                 Список видео
                             </p>
