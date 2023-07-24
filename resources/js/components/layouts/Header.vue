@@ -282,7 +282,7 @@
                     }})
             },
             PlayListCount(){
-                if(localStorage.getItem('playlist'))
+                if(localStorage.hasOwnProperty('playlist') && localStorage.getItem('playlist') != '')
                 {
                     this.playCount = localStorage.getItem('playlist').split(',')
 
@@ -298,7 +298,7 @@
             },
 
             makePlaylist(){
-                if(localStorage.getItem('playlist') != ''){
+                if(localStorage.hasOwnProperty('playlist') && localStorage.getItem('playlist') != ''){
                     axios.post('/api/playlist', {id: localStorage.getItem('playlist')})
                     .then(response=>{
                         console.log(response.data.data)
