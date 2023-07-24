@@ -427,15 +427,18 @@
                             }
                         })
                         if(this.playlistRes == ''){
-                            localStorage.setItem('playlist', '')
+                            localStorage.removeItem('playlist', '')
                             this.$parent.$parent.$refs.header.PlayListCount()
                             this.$parent.$parent.$refs.header.makePlaylist()
+                            this.playlistItems = false;
+                        }else{
+                            localStorage.setItem('playlist', this.playlistRes)
+                            this.$parent.$parent.$refs.header.PlayListCount()
+                            this.$parent.$parent.$refs.header.makePlaylist()
+                            this.playlistItems = false;
                         }
 
-                        localStorage.setItem('playlist', this.playlistRes)
-                        this.$parent.$parent.$refs.header.PlayListCount()
-                        this.$parent.$parent.$refs.header.makePlaylist()
-                        this.playlistItems = false;
+
                     }else{
                         this.playlistRes.push(id)
                         localStorage.setItem('playlist', this.playlistRes)
