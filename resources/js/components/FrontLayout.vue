@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper p-0 m-0">
 
         <sidebar-component ref="sidebar"></sidebar-component>
 
