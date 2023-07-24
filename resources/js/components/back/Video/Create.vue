@@ -18,6 +18,55 @@
                 </div>
             </div>
 
+
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Проверки видео</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="col-sm-4 col-6">
+                        <!-- Kinopoisk ID -->
+                        <div class="form-group">
+                            <label for="testId">Наличие в БД:</label>
+                            <button @click="checkInBD(parseResult.kinopoiskId)" type="button" class="btn btn-block btn-info" id="testId">Тест</button>
+                            <div v-if="testId != null">
+                                <div v-if="testId === 1" class="alert alert-danger" role="alert">
+                                    Present in Database
+                                </div>
+                                <div v-if="testId === 2"  class="alert alert-info" role="alert">
+                                    Absent in Database
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Video Test -->
+                    <div class="col-sm-6">
+                        <div class="form-group mt-3" v-if="parseResult.kinopoiskId != null">
+                            <div class="accordion accordion-flush">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button @click.prevent="testVideo()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                            Тест Видео
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body alert alert-info">
+                                            <div class="kinobox_player"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title">Добавление видео</h3>
@@ -34,22 +83,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6">
-                                <!-- Kinopoisk ID -->
-                                <div class="form-group">
-                                    <label for="testId">Наличие в БД:</label>
-                                    <button @click="checkInBD(parseResult.kinopoiskId)" type="button" class="btn btn-block btn-info" id="testId">Тест</button>
-                                    <div v-if="testId != null">
-                                        <div v-if="testId === 1" class="alert alert-danger" role="alert">
-                                            Present in Database
-                                        </div>
-                                        <div v-if="testId === 2"  class="alert alert-info" role="alert">
-                                            Absent in Database
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
 
                             <!-- Year -->
                             <div class="col-sm-6">
@@ -71,25 +104,7 @@
                                 </div>
                             </div>
 
-                            <!-- Video Test -->
-                            <div class="col-sm-6">
-                                <div class="form-group mt-3" v-if="parseResult.kinopoiskId != null">
-                                    <div class="accordion accordion-flush">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button @click.prevent="testVideo()" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                    Тест Видео
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body alert alert-info">
-                                                    <div class="kinobox_player"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <div class="row">
 
