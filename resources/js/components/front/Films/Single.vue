@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="cover-pic">
+                <div class="cover-pic w-100">
 <!--                     Постер Рекламы-->
                     <a href="https://t.me/kino_movieone" target="_blank">
                     <img src="/img/poster.jpg" class="img-fluid" alt="promo poster w-100">
