@@ -2,15 +2,14 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="cover-pic w-100">
-<!--                     Постер Рекламы-->
-                    <a href="https://t.me/kino_movieone" target="_blank">
-                    <img src="/img/poster.jpg" class="img-fluid" alt="promo poster w-100">
-                    </a>
-                </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 widget shadow rounded mb-4">
+                <a href="https://t.me/kino_movieone" target="_blank">
+                <!--Постер Рекламы-->
+                    <img src="/img/poster.jpg" class="img-fluid w-100" alt="promo poster">
+                </a>
             </div>
+
             <div class="col-xl-3 col-lg-3 col-sm-12">
                 <div class="bg-white p-3 widget shadow rounded mb-4">
                     <div class="row">
