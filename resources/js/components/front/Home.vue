@@ -148,7 +148,6 @@
                 axios.get('/api/home')
                 .then(response=>{
                     this.results = response.data.data
-                    console.log(this.results)
                 })
             },
         },
