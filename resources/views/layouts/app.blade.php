@@ -19,7 +19,7 @@
 
 
 </head>
-<body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse" id="page-top">
+<body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse m-0 p-0" id="page-top">
 
     <div id="app">
 
