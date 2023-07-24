@@ -1,6 +1,6 @@
 <template>
         <div class="row m-3">
-            <div class="card card-warning">
+            <div class="card">
                 <div class="card-header">
 
                     <h3 class="card-title">Редактирование видео</h3>

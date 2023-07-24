@@ -41,6 +41,7 @@
                     <th style="width: 10px">#</th>
                     <th>Title</th>
                     <th>Action</th>
+                    <th></th>
 
                 </tr>
                 </thead>
@@ -50,9 +51,10 @@
                         <td>{{subcategory.id}}</td>
                         <td>{{subcategory.title}}</td>
                         <td>
-                            <button @click="getChangeInfo(subcategory.id, subcategory.title)" type="button" class="btn btn-block btn-warning btn-sm w-50">Redact</button>
-                            <button @click="deleteSubCategory(subcategory.id)" type="button" class="btn btn-block btn-danger btn-sm w-50">Delete</button>
-
+                            <button @click="getChangeInfo(subcategory.id, subcategory.title)" type="button" class="btn btn-block btn-warning btn-sm w-50"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </td>
+                        <td>
+                            <button @click="deleteSubCategory(subcategory.id)" type="button" class="btn btn-block btn-danger btn-sm w-50"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
 
@@ -60,7 +62,7 @@
                         <td>{{subcategory.id}}</td>
                         <td><input type="text" v-model="subcategory.title"></td>
                         <td>
-                            <button @click="updateSubcategory(subcategory.id, this.requestedCategory, subcategory.title)" type="button" class="btn btn-block btn-warning btn-sm w-50">Submit</button>
+                            <button @click="updateSubcategory(subcategory.id, this.requestedCategory, subcategory.title)" type="button" class="btn btn-block btn-success btn-sm w-50"><i class="fa-solid fa-check"></i></button>
                         </td>
                     </tr>
 
