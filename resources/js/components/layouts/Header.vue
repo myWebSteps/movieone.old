@@ -18,7 +18,7 @@
         <ul class="navbar-nav ml-auto">
             <!-- Navbar Search -->
             <li class="nav-item">
-                <div class="nav-link" data-widget="navbar-search" role="button">
+                <div class="nav-link" data-widget="navbar-search">
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="navbar-search-block">
