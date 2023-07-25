@@ -3,7 +3,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 widget shadow rounded mb-4">
+            <div class="col-12 bg-white shadow mb-4">
                 <a href="https://t.me/kino_movieone" target="_blank">
                 <!--Постер Рекламы-->
                     <img src="/img/poster.jpg" class="img-fluid w-100" alt="promo poster">
@@ -11,7 +11,7 @@
             </div>
 
             <div class="col-xl-3 col-lg-3 col-sm-12">
-                <div class="bg-white p-3 widget shadow rounded mb-4">
+                <div class="bg-white p-3 widget shadow- rounded mb-4">
                     <div class="row">
 
                     <div class="col-sm-6 col-xl-12 col-lg-12">
@@ -168,7 +168,7 @@
                                         <div v-if="review.type == 'NEGATIVE'" class="mt-0 mb-2">
                                             <span class="h6 mr-2 font-weight-bold text-danger">-</span>
                                         </div>
-                                        <p>{{review.description}}</p>
+                                        <p v-html="review.description"></p>
                                     </div>
                                 </div>
                                 <nav v-if="reviews.totalPages > 1" class="d-grid justify-content-md-center">
