@@ -153,8 +153,6 @@
     mounted() {
     this.send()
 
-        ym(94438576, 'hit', '/');
-
     document.getElementById('document_description').innerText= "MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
 
     },
