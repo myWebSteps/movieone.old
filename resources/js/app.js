@@ -1,25 +1,17 @@
 import './bootstrap';
 
-import '../assets/css/osahan.css'
-import '../assets/vendor/fontawesome-free/css/all.min.css'
-import '../assets/AdminLte/dist/css/adminlte.min.css'
-
-// import '../assets/vendor/slick/slick.min.css'
-// import '../assets/vendor/slick/slick-theme.min.css'
+import '../assets/css/osahan.css';
+import '../assets/vendor/fontawesome-free/css/all.min.css';
+import '../assets/AdminLte/dist/css/adminlte.min.css';
 
 import '../assets/vendor/jquery/jquery.min'
 import '../assets/vendor/bootstrap/js/bootstrap.bundle.min'
 import '../assets/vendor/jquery-easing/jquery.easing.min'
 import '../assets/AdminLte/dist/js/adminlte'
-// import '../assets/vendor/slick/slick.min'
-// import '../assets/js/osahan.min'
-
 
 import { createApp } from 'vue';
 
-import router from './router.js'
-
-// import VueYandexMetrika from 'vue-yandex-metrika'
+import router from './router.js';
 
 import App from './components/MainComponent.vue';
 import Header from './components/layouts/Header.vue';
@@ -40,11 +32,6 @@ import AuthFooterComponent from "./components/layouts/Auth/AuthFooter.vue";
 const app = createApp(App)
 
 app.use(router);
-// app.use(VueYandexMetrika, {
-//     id: 94438576,
-//     router: router,
-//     // other options
-// })
 
 app.component('main-component', App);
 
