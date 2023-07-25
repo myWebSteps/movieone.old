@@ -17,17 +17,6 @@
         <div class="content-header p-0 m-0">
             <div class="container-fluid p-0 m-0">
 
-
-
-<!--                <vueper-slides autoplay>-->
-<!--                    <vueper-slide v-for="(slide, i) in slides"-->
-<!--                                  :image="slide.image"-->
-<!--                                  />-->
-<!--                    <template #pause>-->
-<!--                        <i class="icon pause_circle_outline"></i>-->
-<!--                    </template>-->
-<!--                </vueper-slides>-->
-
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -163,10 +152,6 @@
 
     mounted() {
     this.send()
-
-
-
-
 
     document.getElementById('document_description').innerText= "MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
 
