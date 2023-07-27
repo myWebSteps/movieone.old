@@ -311,6 +311,7 @@
 
         mounted() {
             this.send()
+            ym(94438576, 'hit', `/films/${this.$route.params.id}`);
         },
 
         methods:{

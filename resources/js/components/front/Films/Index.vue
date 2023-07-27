@@ -75,6 +75,8 @@
 
 
         mounted(){
+            ym(94438576, 'hit', '/films/');
+
             document.getElementById('document_description').innerText= "MovieOne Онлайн поиск по базе данных фильмов, мультфильмов и аниме."
 
             this.send()
