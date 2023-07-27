@@ -386,15 +386,19 @@
                             }
                         }).init();
 
-
-                        this.playlistRes = localStorage.getItem('playlist').split(',')
-                        if(this.playlistRes.includes(String(this.movie.id))){
-                            this.playlistItems = true;
-                        }else{
-                            this.playlistItems = false;
+                        if(localStorage.getItem('playlist')){
+                            this.playlistRes = localStorage.getItem('playlist').split(',')
+                            if(this.playlistRes.includes(String(this.movie.id))){
+                                this.playlistItems = true;
+                            }else{
+                                this.playlistItems = false;
+                            }
                         }
 
+
                     }).catch(e=>{
+                        console.log(e)
+                    this.$router.push('/')
 
                 })
 
@@ -404,7 +408,6 @@
                 axios.get(`/api/movie/get_related/${subcatId}/${movieId}`)
                 .then(response=>{
                     this.relatedMovies = response.data.data
-                    console.log(this.relatedMovies)
                 });
             },
 
