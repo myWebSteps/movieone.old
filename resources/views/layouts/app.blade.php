@@ -1,17 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR6CRNLL5Y"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-SR6CRNLL5Y');
-    </script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
 
@@ -42,6 +31,7 @@
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     ym(94438576, "init", {
+        defer: true,
         clickmap:true,
         trackLinks:true,
         accurateTrackBounce:true
