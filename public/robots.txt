@@ -3,3 +3,5 @@ Disallow: /admin/
 
 User-agent: *
 Disallow: /auth/
+
+Host: https://www.movieone.ru
