@@ -13,8 +13,7 @@
         ym(94438576, "init", {
             clickmap:true,
             trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true
+            accurateTrackBounce:true
         });
     </script>
     <!-- /Yandex.Metrika counter -->
