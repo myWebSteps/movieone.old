@@ -3,7 +3,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <vue-headful
-            :title="`MovieOne.ru | ${movie.nameOriginal} смотреть онлайн бесплатно без регистрации` "
+            :title="`MovieOne.ru | ${movie.nameRu} смотреть онлайн бесплатно без регистрации` "
             :description="movie.description"
         >
         </vue-headful>
