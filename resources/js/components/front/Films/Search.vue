@@ -1,5 +1,10 @@
 <template>
     <div class="container-fluid">
+        <vue-headful
+            :title="`MovieOne.ru | Поиск по ключевым словам` "
+            description="Список видео по ключевым словам"
+        >
+        </vue-headful>
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between p-4 mb-4">
             <h1 class="h5 mb-0 text-gray-900">Результаты поиска:"{{this.$route.query.key}}"</h1>
@@ -68,11 +73,8 @@
         },
 
         mounted(){
-            document.getElementById('document_description').innerText= "MovieOne Онлайн поиск по базе данных фильмов, мультфильмов и аниме."
-
             this.send()
             this.pagination.links = []
-
         },
 
         methods:{

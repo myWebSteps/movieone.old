@@ -266,16 +266,16 @@ router.beforeEach((to, from, next)=>{
 router.afterEach((to, from)=>{
 
 
-
-    if(to.name == 'film'){
-        axios.get(`/api/movie/${this.to.params.id}`)
-            .then(resp=>{
-                document.title = this.movie.nameRu + ' : смотреть бесплатно и без регистрации'
-
-            });
-    }else{
-      document.title = to.meta.title;
-    }
+    //
+    // if(to.name == 'film'){
+    //     axios.get(`/api/movie/${this.to.params.id}`)
+    //         .then(resp=>{
+    //             document.title = this.movie.nameRu + ' : смотреть бесплатно и без регистрации'
+    //
+    //         });
+    // }else{
+    //   document.title = to.meta.title;
+    // }
 
 
 })

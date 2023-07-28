@@ -12,6 +12,8 @@ import '../assets/AdminLte/dist/js/adminlte'
 import { createApp } from 'vue';
 
 import router from './router.js';
+import vueHeadful from 'vue-headful';
+
 
 import App from './components/MainComponent.vue';
 import Header from './components/layouts/Header.vue';
@@ -47,6 +49,7 @@ app.component('front-component', FrontComponent);
 app.component('admin-component', AdminComponent);
 app.component('auth-header-component', AuthHeaderComponent);
 app.component('auth-footer-component', AuthFooterComponent);
+app.component('vue-headful', vueHeadful);
 
 
 

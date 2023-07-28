@@ -1,6 +1,11 @@
 <template>
         <!-- Main content -->
         <section class="content">
+            <vue-headful
+                title="Movieone.ru | поиск актуальных фильмов и мультиков"
+                description="Поиск актуальных и интересных фильмов, мультиков, анимэ, шоу"
+            >
+            </vue-headful>
             <div class="container-fluid">
                 <!-- Content Row -->
                 <div class="row">
@@ -76,8 +81,6 @@
 
         mounted(){
             ym(94438576, 'hit', '/films/');
-
-            document.getElementById('document_description').innerText= "MovieOne Онлайн поиск по базе данных фильмов, мультфильмов и аниме."
 
             this.send()
             this.pagination.links = []
