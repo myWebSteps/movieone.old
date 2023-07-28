@@ -2,6 +2,12 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div>
+        <vue-headful
+            title="MovieOne.ru | Смотреть интересные фильмы и мультики, анимэ онлайн бесплатно без регистрации"
+            description="MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
+        >
+
+        </vue-headful>
         <vueper-slides
         fade
         :autoplay="true"
@@ -153,7 +159,6 @@
     mounted() {
     this.send()
     ym(94438576, 'hit', '/');
-    document.getElementById('document_description').innerText= "MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
 
     },
 

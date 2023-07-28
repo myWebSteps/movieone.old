@@ -2,6 +2,11 @@
 
     <!-- Begin Page Content -->
     <div class="container-fluid">
+        <vue-headful
+            :title="`MovieOne.ru | ${movie.nameOriginal} смотреть онлайн бесплатно без регистрации` "
+            :description="movie.description"
+        >
+        </vue-headful>
         <div class="row d-flex justify-content-center">
             <div class="col-12 bg-white shadow mb-4">
                 <a href="https://t.me/kino_movieone" target="_blank">
@@ -320,8 +325,6 @@
                 axios.get(`/api/movie/${this.$route.params.id}`)
                     .then(response=>{
                         this.movie = response.data.data
-
-                        document.getElementById('document_description').innerText= this.movie.nameRu + ' : ' + this.movie.description
 
                         this.getReviews()
                         this.getRelatedMovies(this.movie.subcategories[0].id, this.movie.id)
