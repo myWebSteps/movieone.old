@@ -9,13 +9,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title id="document_title">{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <!-- Theme -->
-    <meta name="description" id="document_description" content="">
+    <meta name="description" content="">
 
     <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
 
