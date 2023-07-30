@@ -21,7 +21,7 @@
 
 
 </head>
-<body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse m-0 p-0" id="page-top">
+<body class="hold-transition layout-fixed layout-navbar-fixed" id="page-top">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
