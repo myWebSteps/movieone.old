@@ -1,30 +1,26 @@
 <template>
 
-    <!-- Content Wrapper. Contains page content -->
-    <div>
-        <vue-headful
-            title="MovieOne.ru | Смотреть интересные фильмы и мультики, анимэ онлайн бесплатно без регистрации"
-            description="MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
-        >
+       <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
 
-        </vue-headful>
-        <vueper-slides
-        fade
-        :autoplay="true"
-        :visible-slides="3"
-        slide-multiple
-        :slide-ratio="1 / 4"
-        :arrows="false">
-        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+                <vue-headful
+                    title="MovieOne.ru | Смотреть интересные фильмы и мультики, анимэ онлайн бесплатно без регистрации"
+                    description="MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
+                >
 
-    </vueper-slides>
+                </vue-headful>
+                <vueper-slides
+                    fade
+                    :autoplay="true"
+                    :visible-slides="3"
+                    slide-multiple
+                    :slide-ratio="1 / 4"
+                    :arrows="false">
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
 
-        <!-- Content Header (Page header) -->
-        <div class="content-header p-0 m-0">
-            <div class="container-fluid p-0 m-0">
-
+                </vueper-slides>
             </div><!-- /.container-fluid -->
-        </div>
         <!-- /.content-header -->
 
         <!-- Main content -->
@@ -102,8 +98,8 @@
             </div><!--/. container-fluid -->
         </section>
         <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
+        </div>
+
 
 
 
