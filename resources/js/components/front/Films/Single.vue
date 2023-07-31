@@ -241,8 +241,8 @@
                         <h6 class="text-gray-900 m-2 font-weight-bold">Похожие фильмы:</h6>
                 </div>
 
-                    <div v-for="relatedMovie in relatedMovies" class="col-xl-2 col-md-3 col-sm-4 m-4 col-6">
-                        <div class="card e-card shadow border-0">
+                    <div class="col-xl-2 col-md-3 col-sm-4 m-4 col-6">
+                        <div v-for="relatedMovie in relatedMovies" class="card e-card shadow border-0">
                             <router-link :to="{name: 'film', params:{id: relatedMovie.id}}" class=""><div class="m-card-cover">
                                 <img :src="relatedMovie.posterUrl" class="card-img-top" alt="...">
                             </div>
