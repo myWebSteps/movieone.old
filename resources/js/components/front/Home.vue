@@ -1,9 +1,6 @@
 <template>
-
        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-
+        <div class="page-header">
                 <vue-headful
                     title="MovieOne.ru | Смотреть интересные фильмы и мультики, анимэ онлайн бесплатно без регистрации"
                     description="MovieOne Онлайн кинотеатр с большим выбором фильмов, мультфильмов и аниме. У нас Вы всегда можете посмотреть любимые фильмы бесплатно и без регистрации"
@@ -16,16 +13,15 @@
                     :visible-slides="3"
                     slide-multiple
                     :slide-ratio="1 / 4"
-                    :arrows="false">
+                    :arrows="false" class="p-0 m-0">
                     <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
 
                 </vueper-slides>
-            </div><!-- /.container-fluid -->
-        <!-- /.content-header -->
 
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">
+                <div class="row">
                 <template v-for="result in results">
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mt-4 mb-3">
@@ -95,6 +91,7 @@
 
 
 
+            </div><!--/. row -->
             </div><!--/. container-fluid -->
         </section>
         <!-- /.content -->
