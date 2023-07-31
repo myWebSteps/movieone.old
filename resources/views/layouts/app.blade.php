@@ -21,7 +21,7 @@
 
 
 </head>
-<body class="hold-transition layout-fixed layout-navbar-fixed" id="page-top">
+<body class="sidebar-mini layout-fixed sidebar-mini-md sidebar-closed sidebar-collapse control-sidebar-slide-open" id="app">
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -40,13 +40,10 @@
 <!-- /Yandex.Metrika counter -->
 <noscript><div><img src="https://mc.yandex.ru/watch/94438576" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-    <div id="app">
 
         @yield('content')
 
 
-
-</div>
 
     <script src="https://kinobox.tv/kinobox.min.js"></script>
 
