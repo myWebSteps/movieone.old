@@ -90,7 +90,7 @@
 
                             <article class="mt-2">
                                 <h1 class="text-gray-800">{{movie.nameRu}} / {{movie.nameOriginal}}</h1>
-                                <p class="text-gray-800">{{movie.description}}</p>
+                                <p class="text-gray-800" v-html="movie.description"></p>
                             </article>
 
 
