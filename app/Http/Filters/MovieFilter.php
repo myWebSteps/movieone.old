@@ -38,7 +38,9 @@ class MovieFilter extends AbstractFilter
 
     protected function search(Builder $builder, $value)
     {
-        $builder->where('description', 'like', "%$value%");
+        $builder->where('nameRu', 'like', "%$value%")
+        ->orWhere('nameOriginal', 'like', "%$value%")
+        ->orWhere('description', 'like', "%$value%");
     }
 
     protected function subcategory(Builder $builder, $value)

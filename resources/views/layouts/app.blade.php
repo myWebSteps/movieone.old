@@ -3,7 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
-
+    <!-- Https -->
+    <meta name="yandex-verification" content="04c3bf7c897cb0df" />
+    <!-- Http -->
     <meta name="yandex-verification" content="04c3bf7c897cb0df" />
 
     <!-- CSRF Token -->
