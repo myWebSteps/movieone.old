@@ -4,7 +4,6 @@
     <div class="container-fluid">
         <vue-headful
             :title="`${this.$route.query.name} смотреть онлайн бесплатно без регистрации` "
-            :description="movie.description"
         >
         </vue-headful>
         <div class="row d-flex justify-content-center">
