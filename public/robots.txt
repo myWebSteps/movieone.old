@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Clean-param: category&order&page&name
 Disallow: /admin/
 Disallow: /auth/
 Host: https://www.movieone.ru
