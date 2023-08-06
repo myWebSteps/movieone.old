@@ -40,7 +40,7 @@
 
                         <div v-for="movie in result.movies" class="col-xl-3 col-md-6 mb-4">
                             <div  class="card e-card shadow border-0">
-                                <router-link :to="{path: `films/${movie.id}`}">
+                                <router-link :to="{path: `films/${movie.id}`, query:{name: movie.nameRu}}">
                                     <div class="m-card-cover">
                                         <img :src="movie.poster_path" class="card-img-top" :alt="movie.nameOriginal">
                                     </div>

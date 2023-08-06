@@ -3,7 +3,7 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <vue-headful
-            :title="`MovieOne.ru | ${movie.nameRu} смотреть онлайн бесплатно без регистрации` "
+            :title="`${this.$route.query.name} смотреть онлайн бесплатно без регистрации` "
             :description="movie.description"
         >
         </vue-headful>
@@ -243,7 +243,7 @@
                     <div class="row col-12 d-flex justify-content-center">
                     <div v-for="relatedMovie in relatedMovies" class="col-xl-2 col-md-3 col-sm-4 col-9 m-4 col-6">
                         <div  class="card e-card shadow border-0">
-                            <router-link :to="{name: 'film', params:{id: relatedMovie.id}}" class=""><div class="m-card-cover">
+                            <router-link :to="{name: 'film', params:{id: relatedMovie.id}, query:{name: movie.nameRu}}" class=""><div class="m-card-cover">
                                 <img :src="relatedMovie.posterUrl" class="card-img-top" alt="...">
                             </div>
                                 <div class="card-body p-0">
@@ -296,24 +296,21 @@
             }
         },
 
-        computed(){
-            this.movie.posterUrl = "#"
-            this.movie.kinopoisk_id = null
-            this.movie.nameRu = null
-            this.movie.nameOriginal = null
-            this.movie.subcategories = null
-            this.movie.slogan = null
-            this.movie.description = null
-            this.movie.filmLength = null
-            this.movie.endYear = null
-            this.movie.rate = null
-            this.staff.directors = {}
-            this.staff.actors = {}
-            this.staff.support = {}
-
-
-
-        },
+        // computed(){
+        //     this.movie.posterUrl = "#"
+        //     this.movie.kinopoisk_id = null
+        //     this.movie.nameRu = null
+        //     this.movie.nameOriginal = null
+        //     this.movie.subcategories = null
+        //     this.movie.slogan = null
+        //     this.movie.description = null
+        //     this.movie.filmLength = null
+        //     this.movie.endYear = null
+        //     this.movie.rate = null
+        //     this.staff.directors = {}
+        //     this.staff.actors = {}
+        //     this.staff.support = {}
+        // },
         beforeMount() {
             this.send()
         },
@@ -324,7 +321,6 @@
 
         methods:{
             send(){
-
                 axios.get(`/api/movie/${this.$route.params.id}`)
                     .then(response=>{
                         this.movie = response.data.data
