@@ -2,7 +2,7 @@
         <!-- Main content -->
         <section class="content">
             <vue-headful
-                title="Movieone.ru | поиск актуальных фильмов и мультиков"
+                title="Поиск актуальных фильмов и мультиков"
                 description="Поиск актуальных и интересных фильмов, мультиков, анимэ, шоу"
             >
             </vue-headful>
