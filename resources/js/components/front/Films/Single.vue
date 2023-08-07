@@ -295,24 +295,28 @@
             }
         },
 
-        computed(){
-            this.movie.posterUrl = "#"
-            this.movie.kinopoisk_id = null
-            this.movie.nameRu = null
-            this.movie.nameOriginal = null
-            this.movie.subcategories = null
-            this.movie.slogan = null
-            this.movie.description = null
-            this.movie.filmLength = null
-            this.movie.endYear = null
-            this.movie.rate = null
-            this.staff.directors = {}
-            this.staff.actors = {}
-            this.staff.support = {}
+        // computed(){
+        //     this.movie.posterUrl = "#"
+        //     this.movie.kinopoisk_id = null
+        //     this.movie.nameRu = null
+        //     this.movie.nameOriginal = null
+        //     this.movie.subcategories = null
+        //     this.movie.slogan = null
+        //     this.movie.description = null
+        //     this.movie.filmLength = null
+        //     this.movie.endYear = null
+        //     this.movie.rate = null
+        //     this.staff.directors = {}
+        //     this.staff.actors = {}
+        //     this.staff.support = {}
+        // },
+
+        beforeMount(){
+            this.send()
         },
 
         mounted() {
-            this.send()
+
             ym(94438576, 'hit', `/films/${this.$route.params.id}`);
         },
 
