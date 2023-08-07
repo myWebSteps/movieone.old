@@ -3,4 +3,5 @@ Allow: /
 Clean-param: category&order&page&name
 Disallow: /admin/
 Disallow: /auth/
+Disallow: /films/$
 Host: https://www.movieone.ru
